@@ -5,6 +5,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 users = [];
 connections = [];
+subjects = [];
 
 server.listen(process.env.PORT || 3000);
 console.log('Server running...');
@@ -37,9 +38,24 @@ io.sockets.on('connection', function(socket){
         socket.username = data;
         users.push(socket.username);
         updateUsernames();
+        console.log(data);
+    });
+
+    //new subject
+    socket.on('new subject', function(data, callback){
+        callback(true);
+        socket.subject = data;
+        subjects.push(socket.subject);
+        updateSubjects();
+        console.log(data);
+
     });
 
     function updateUsernames(){
         io.sockets.emit('get users', users);
+    }
+
+    function updateSubjects(){
+        io.sockets.emit('get subjects', subjects);
     }
 });
