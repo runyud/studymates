@@ -35,7 +35,9 @@
                 </form>
             </div>
         </div>
-        <div id="subjectFormArea" class="row">
+    </div>
+    <div class="container">
+        <div id="subjectArea" class="row">
             <div class="col-md-12">
                 <form id="subjectForm">
                     <div class="form-group">
@@ -50,9 +52,8 @@
         <div id= "messageArea" class = "row">
             <div class="col-md-4">
                 <div class="well">
-                    <h3>Online Users</h3>
-                    <u1 class="list-group" id="users"></u1>
-                    <u1 class="list-group" id="subjects"></u1>
+                    <h3>Online Users and Questions</h3>
+                    <u1 class="list-group" id= "list"></u1>
                 </div>
             </div>
             <div class="col-md-8">
@@ -80,13 +81,12 @@
             var $messageArea = $('#messageArea')
             var $userFormArea = $('#userFormArea')
             var $userForm = $('#userForm');
-            var $users = $('#users');
             var $username = $('#username');
-            var $subjectFormArea = $('#subjectFormArea');
-            var $subjectForm = $('#subjectForm'); 
-            var $subjects = $('#subjects');
+            var $subjectArea = $('#subjectArea');
+            var $subjectForm = $('#subjectForm');
+            var $list = $('#list');
             var $subject = $('#subject');
-
+            $subjectArea.hide();
             $messageForm.submit(function(e){
                 e.preventDefault();
                 socket.emit('send message', $message.val());
@@ -102,27 +102,23 @@
                 socket.emit('new user', $username.val(), function(data){
                     if(data){
                         $userFormArea.hide();
-                        $subjectFormArea.show();
-                        //$messageArea.show();
+                        $subjectArea.show();
                     }
 
                 });
                 $username.val('');
             });
 
+            var arr_users = [];
             socket.on('get users', function(data){
-                var html = '';
-                for(i = 0; i < data.length; i++){
-                    html += '<li class="list-group-item">' + data[i] + '</li>';
-                }
-                $users.html(html);
+                arr_users = data;
             });
 
             $subjectForm.submit(function(e){
                 e.preventDefault();
                 socket.emit('new subject', $subject.val(), function(data){
                     if(data){
-                        $subjectFormArea.hide();
+                        $subjectArea.hide();
                         $messageArea.show();
                     }
                 });
@@ -132,9 +128,10 @@
             socket.on('get subjects', function(data){
                 var html = '';
                 for(i = 0; i < data.length; i++){
-                    html += '<li class="list-group-item">' + data[i] + '</li>';
+                    html += '<li class="list-group-item"> user:' + arr_users[i] + '</li>';
+                    html += '<li class="list-group-item"> question:' + data[i] + '</li>';
                 }
-                $subjects.html(html);
+                $list.html(html);
             });
         });
 

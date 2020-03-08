@@ -40,7 +40,6 @@ io.sockets.on('connection', function(socket){
         socket.username = data;
         users.push(socket.username);
         updateUsernames();
-        console.log(data);
     });
 
     //new subject
@@ -49,8 +48,6 @@ io.sockets.on('connection', function(socket){
         socket.subject = data;
         subjects.push(socket.subject);
         updateSubjects();
-        console.log(data);
-
     });
 
     function updateUsernames(){
