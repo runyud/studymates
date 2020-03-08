@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.use(express.static('public'))
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 users = [];
