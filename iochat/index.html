@@ -128,8 +128,10 @@
             socket.on('get subjects', function(data){
                 var html = '';
                 for(i = 0; i < data.length; i++){
+                    index = i + 1;
+                    html += '<fieldset> <legend> User:' + index + '</legend>';
                     html += '<li class="list-group-item"> user:' + arr_users[i] + '</li>';
-                    html += '<li class="list-group-item"> question:' + data[i] + '</li>';
+                    html += '<li class="list-group-item"> question:' + data[i] + '</li></fieldset>';
                 }
                 $list.html(html);
             });
