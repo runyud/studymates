@@ -14,6 +14,8 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
   <style>
   	#location_select {
   		min-height:190px; 
@@ -30,7 +32,7 @@
   <h2 align="center"><a href="#">We will match for you!</a></h2>
   <br />
   <div class="container">
-   <form method="POST" id="submit_form"> // changed comment_form to submit_form
+   <form method="POST" id="request_form">
     <div class="form-group">
      <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter Name" />
     </div>
@@ -48,31 +50,57 @@
       </datalist>
 	</div>
     <div class="form-group">
-    	<input type="text" name="time" id="time" class="form-control"
-    	value = "Availabilities" />
-    	<script>
-			$(function() {
-			  $('input[name="time"]').daterangepicker({
-			    timePicker: true,
-			    locale: {
-			      format: 'hh:mm A'
-			    }
-			  }).on('show.daterangepicker', function(ev, picker) {
-			  	picker.container.find(".calendar-table").hide();
-			  });
-			});
+    	<input type="text" name="open_from" id="open_from" class="form-control" placeholder="Time Available From : "/>
+    	<script type="text/javascript">
+        $(function() {
+          $('input[name="open_from"]').timepicker({
+            timeFormat: 'HH:mm a',
+            dynamic: true,
+          })
+        });
+
+
+      // $('#open_from').timepicker({
+      //   timeFormat: 'hh:mm p',
+      //   dynamic: true,
+      // });
+			// $(function() {
+			//   $('input[name="time_opening"]').daterangepicker({
+			//     timePicker: true,
+   //        timePickerIncrement: 30,
+   //        autoUpdateInput: false,
+			//     locale: {
+			//       format: 'hh:mm A'
+			//     }
+			//   }).on('show.daterangepicker', function(ev, picker) {
+			//   	picker.container.find(".calendar-table").hide();
+			//   });
+
+   //      $('input[name="time_opening"]').on('apply.daterangepicker', function(ev, picker) {
+   //        $(this).val(picker.startDate.format('hh:mm A') + ' - ' + picker.endDate.format('hh:mm A'));
+   //      });
+   //      $('input[name="time_opening"]').on('cancel.daterangepicker', function(ev, picker) {
+   //        $(this).val('');
+   //      });
+			// });
 		</script>
 	</div>
-
-    <!-- <div class="form-group">
-     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
-    </div> -->
+  <div class="form-group">
+    <input type="text" name="open_until" id="open_until" class="form-control" placeholder="Time Available Until : "/>
+    <script type="text/javascript">
+        $(function() {
+          $('input[name="open_until"]').timepicker({
+            timeFormat: 'HH:mm a',
+            dynamic: true,
+          })
+        });
+    </script>
+  </div>
     <div class="form-group">
-     <input type="hidden" name="comment_id" id="comment_id" value="0" />
      <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
     </div>
    </form>
-   <span id="comment_message"></span>
+   <span id="request_message"></span>
    <br />
    <div id="display_comment"></div>
   </div>
@@ -82,11 +110,11 @@
 <script>
 $(document).ready(function(){
  
- $('#comment_form').on('submit', function(event){
+ $('#request_form').on('submit', function(event){
   event.preventDefault();
   var form_data = $(this).serialize();
   $.ajax({
-   url:"add_comment.php",
+   url:"add_requests.php",
    method:"POST",
    data:form_data,
    dataType:"JSON",
@@ -94,21 +122,22 @@ $(document).ready(function(){
    {
     if(data.error != '')
     {
-     $('#comment_form')[0].reset();
-     $('#comment_message').html(data.error);
-     $('#comment_id').val('0');
-     load_comment();
+     $('#request_form')[0].reset();
+     $('#request_message').html(data.error);
+     //$('#open_from').reset();
+     //$('#open_until').reset();
+     //$('#comment_id').val('0');
     }
    }
   })
  });
 
- load_comment();
+ load_requests();
 
- function load_comment()
+ function load_requests()
  {
   $.ajax({
-   url:"fetch_comment.php",
+   url:"fetch_requests.php",
    method:"POST",
    success:function(data)
    {
@@ -117,11 +146,11 @@ $(document).ready(function(){
   })
  }
 
- $(document).on('click', '.reply', function(){
-  var comment_id = $(this).attr("id");
-  $('#comment_id').val(comment_id);
-  $('#comment_name').focus();
- });
+ // $(document).on('click', '.reply', function(){
+ //  var comment_id = $(this).attr("id");
+ //  $('#comment_id').val(comment_id);
+ //  $('#comment_name').focus();
+ // });
  
 });
 </script>
