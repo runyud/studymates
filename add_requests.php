@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO('mysql:host=localhost;dbname=studymates', 'root', '');
+$connect = new PDO('mysql:host=127.0.0.1;dbname=studymates', 'root', 'Ryud4@mysql');
 
 $error = '';
 $user_name = '';
@@ -66,11 +66,11 @@ if($error == '')
  $statement = $connect->prepare($query);
  $statement->execute(
   array(
-   ':name' => $user_name,
-   ':email'    => $user_email,
-   ':location' => $location,
-   ':open_from' => $open_from,
-   ':open_until' => $open_until
+   ':name' => $_POST['user_name'],
+   ':email'    => $_POST['user_email'],
+   ':location' => $_POST['location'],
+   ':open_from' => $_POST['open_from'],
+   ':open_until' => $_POST['open_until']
   )
  );
  $error = '<label class="text-success">Matching Request Sent</label>';

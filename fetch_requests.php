@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO('mysql:host=localhost;dbname=studymates', 'root', '');
+$connect = new PDO('mysql:host=127.0.0.1;dbname=studymates', 'root', 'Ryud4@mysql');
 
 $query = "
 Create View View1 AS Select Distinct U1.name as U1_name, U1.email as U1_email, U2.name as U2_name, U2.email as U2_email From requests U1, requests U2 Where (U1.location = U2.location) AND U1.id < U2.id

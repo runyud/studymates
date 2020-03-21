@@ -63,12 +63,12 @@
     .blurred-box:after{
       content: '';
       width: 2000px;
-      height:2000px;
+      height: 2000px;
       background: inherit; 
       position: absolute;
-      left: -25px;
+      left: -100px;
       left position
-      right: -25px;
+      right: 50px;
       right position;
       top: -25px;  
       top position 
@@ -80,15 +80,19 @@
     .container{
       position: relative;
       margin-top: 50px;
-      text-align: center;
+      margin-bottom: 10px;
+      margin-right: 100px;
+      margin-left: 70px;
+      text-align: relative;
       z-index: 1;
     }
-/*    .form-group > *{
+  /* .form-group > *{
       display: inline-block;
       width: 200px;
     }*/
 
     input.form-control{
+      position: right;
       width: 1000px;
       height: 18px;
       opacity: 0.7;
