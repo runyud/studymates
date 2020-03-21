@@ -57,7 +57,7 @@
       background: inherit;
       overflow: hidden;
       border-radius: 1000px;
-      z-index: 2;
+      z-index: 1;
     }
 
     .blurred-box:after{
@@ -74,7 +74,7 @@
       top position 
       bottom: 0;
       box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
-      filter: blur(10px);
+      filter: blur(60px);
     }
 
     .container{
@@ -83,10 +83,10 @@
       text-align: center;
       z-index: 1;
     }
-    .form-group > *{
+/*    .form-group > *{
       display: inline-block;
       width: 200px;
-    }
+    }*/
 
     input.form-control{
       width: 1000px;
