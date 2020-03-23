@@ -66,9 +66,9 @@
       height:2000px;
       background: inherit; 
       position: absolute;
-      left: -25px;
+      left: -100px;
       left position
-      right: -25px;
+      right: 50px;
       right position;
       top: -25px;  
       top position 
@@ -80,13 +80,17 @@
     .container{
       position: relative;
       margin-top: 50px;
-      text-align: center;
+      margin-bottom: 10px;
+      margin-right:100px;
+      margin-left: 65px;
+      text-align: relative;
       z-index: 1;
     }
 
     input.form-control{
-      width: 1140px;
-      height: 25px;
+      position:right;
+      width: 850px;
+      height: 18px;
       opacity: 0.7;
       border-radius: 2px;
       padding: 5px 15px;
