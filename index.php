@@ -24,7 +24,7 @@
 	    width:300px;
 	    display: contents;
   	}
-      img {
+/*      img {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -63,12 +63,12 @@
     .blurred-box:after{
       content: '';
       width: 2000px;
-      height: 2000px;
+      height:2000px;
       background: inherit; 
       position: absolute;
-      left: -100px;
+      left: -25px;
       left position
-      right: 50px;
+      right: -25px;
       right position;
       top: -25px;  
       top position 
@@ -80,26 +80,18 @@
     .container{
       position: relative;
       margin-top: 50px;
-      margin-bottom: 10px;
-      margin-right: 100px;
-      margin-left: 70px;
-      text-align: relative;
+      text-align: center;
       z-index: 1;
     }
-  /* .form-group > *{
-      display: inline-block;
-      width: 200px;
-    }*/
 
     input.form-control{
-      position: right;
       width: 1000px;
       height: 18px;
       opacity: 0.7;
       border-radius: 2px;
       padding: 5px 15px;
       border: 0;
-    }
+    }*/
   </style>
  </head>
  <body>
@@ -201,6 +193,7 @@ $(document).ready(function(){
     {
      $('#request_form')[0].reset();
      $('#request_message').html(data.error);
+     load_requests();
      //$('#open_from').reset();
      //$('#open_until').reset();
      //$('#comment_id').val('0');
@@ -209,7 +202,7 @@ $(document).ready(function(){
   })
  });
 
- load_requests();
+
 
  function load_requests()
  {
