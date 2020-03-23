@@ -73,7 +73,7 @@ if($error == '')
    ':open_until' => $open_until
   )
  );
- $error = '<label class="text-success">Matching Request Sent</label>';
+ $error = '<label class="text-success"></label>';
 }
 
 $data = array(

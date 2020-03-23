@@ -24,7 +24,7 @@
 	    width:300px;
 	    display: contents;
   	}
-/*      img {
+      img {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -85,13 +85,13 @@
     }
 
     input.form-control{
-      width: 1000px;
-      height: 18px;
+      width: 1140px;
+      height: 25px;
       opacity: 0.7;
       border-radius: 2px;
       padding: 5px 15px;
       border: 0;
-    }*/
+    }
   </style>
  </head>
  <body>
@@ -115,7 +115,6 @@
         <datalist id ="dropdown">
             <option value="Central"/>
             <option value="North"/>
-            <option value="Either"/>
         </datalist>
         </div>
         <div class="form-group">

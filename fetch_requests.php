@@ -1,9 +1,14 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\Exception; 
+require 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
 
 $connect = new PDO('mysql:host=localhost;dbname=studymates', 'root', '');
 
 $query = "
-Create View View1 AS Select Distinct U1.name as U1_name, U1.email as U1_email, U2.name as U2_name, U2.email as U2_email From requests U1, requests U2 Where (U1.location = U2.location) AND U1.id < U2.id
+Create View View1 AS Select Distinct U1.name as U1_name, U1.email as U1_email, U2.name as U2_name, U2.email as U2_email From requests U1, requests U2 Where U1.location = U2.location AND U1.id < U2.id
 	Limit 1
 ";
 // USE NESTED LOOPS
@@ -30,20 +35,51 @@ $result = $statement->fetchAll();
 $output = '';
 foreach($result as $row)
 {
- $output .= '
- <div class="panel panel-default">
-  <div class="panel-heading">By <b>'.$row["U1_name"].'</b> on <i>'.$row["U1_email"].''.$row["U2_name"].''.$row["U2_email"].'</i></div>
- </div>
- ';
 }
 
-echo $output;
-
 if (count($result) != 0) {
-$deleted_user1 = $row["U1_name"];
-$deleted_user2 = $row["U2_name"];
+$email1 = $row["U1_email"];
+$email2 = $row["U2_email"];
+$user1 = $row["U1_name"];
+$user2 = $row["U2_name"];
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'StudyMatesMod@gmail.com';                     // SMTP username
+    $mail->Password   = 'StudyMates2020';                               // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('StudyMates@umich.edu', 'StudyMates');
+    //$mail->addAddress('itsye', 'Joe User');     // Add a recipient
+    $mail->addAddress($email1);
+    $mail->addAddress($email2);               // Name is optional
+    //$mail->addReplyTo('info@example.com', 'Information');
+    //$mail->addCC('cc@example.com');
+    //$mail->addBCC('bcc@example.com');
+
+    // Attachments
+    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'StudyMates Partners Matched!';
+    $mail->Body    = "Congratulations on finding a partner! Reach out to them ASAP to get started on your project! <br><br> $user1 : $email1 <br> $user2 : $email2";
+    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Wait for an email. . .';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 $query = "
-Delete From requests Where name IN ('$deleted_user1', '$deleted_user2')
+Delete From requests Where name IN ('$user1', '$user2')
 ";
 
 $statement = $connect->prepare($query);
