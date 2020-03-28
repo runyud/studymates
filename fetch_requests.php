@@ -1,7 +1,7 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
-require 'vendor/autoload.php';
+require 'composer/vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 
@@ -68,6 +68,126 @@ Where (U1.location = U2.location
     AND U1.Thursday = U2.Thursday
     AND U1.Friday = U2.Friday
     AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Tuesday = 'All day'
+    AND U2.Wednesday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Tuesday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Tuesday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Wednesday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Wednesday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Monday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Tuesday = 'All day'
+    AND U2.Wednesday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Tuesday = 'All day'
+    AND U2.Wednesday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Tuesday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
+    OR
+    (U1.location = U2.location 
+    AND U2.Wednesday = 'All day'
+    AND U2.Thursday = 'All day'
+    AND U2.Friday = 'All day'
+    AND U2.id < U1.id)
     Limit 1
 ";
 
@@ -118,7 +238,7 @@ try {
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Wait for an email. . .';
+    echo 'You are matched!! Wait for an email. . .';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
