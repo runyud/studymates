@@ -7,27 +7,72 @@ $mail = new PHPMailer(true);
 
 $connect = new PDO('mysql:host=localhost;dbname=studymates', 'root', '');
 
-$query = "
-Create View View1 AS Select Distinct U1.name as U1_name, U1.email as U1_email, U2.name as U2_name, U2.email as U2_email From requests U1, requests U2 Where U1.location = U2.location AND U1.id < U2.id
-	Limit 1
+$query3 = "
+Select Distinct U1.name as U1_name, U1.email as U1_email, U2.name as U2_name, U2.email as U2_email From requests U1, requests U2 
+Where (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.id < U2.id)
+    Limit 1
 ";
-// USE NESTED LOOPS
 
 
-// $query = "
-// Select DISTINCT U1.name, U1.email, U2.name, U2.email From requests U1, requests U2 Where (U1.location = U2.location) AND U1.email != U2.email AND U1.id < U2.id Group by U1.name, U2.name
-// ";
-
-
-$statement = $connect->prepare($query);
-
-$statement->execute();
-
-$query = "
-Select * From View1
-";
-
-$statement = $connect->prepare($query);
+$statement = $connect->prepare($query3);
 
 $statement->execute();
 
