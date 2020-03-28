@@ -121,6 +121,7 @@
             <option value="North"/>
         </datalist>
         </div>
+        <b>Enter time window in which you are willing to meet-up today</b>
         <div class="form-group">
             <input type="text" name="open_from" id="open_from" class="form-control" placeholder="Time Available From : "/>
             <script type="text/javascript">
@@ -130,44 +131,84 @@
                 dynamic: true,
             })
             });
-
-
-        // $('#open_from').timepicker({
-        //   timeFormat: 'hh:mm p',
-        //   dynamic: true,
-        // });
-                // $(function() {
-                //   $('input[name="time_opening"]').daterangepicker({
-                //     timePicker: true,
-    //        timePickerIncrement: 30,
-    //        autoUpdateInput: false,
-                //     locale: {
-                //       format: 'hh:mm A'
-                //     }
-                //   }).on('show.daterangepicker', function(ev, picker) {
-                //   	picker.container.find(".calendar-table").hide();
-                //   });
-
-    //      $('input[name="time_opening"]').on('apply.daterangepicker', function(ev, picker) {
-    //        $(this).val(picker.startDate.format('hh:mm A') + ' - ' + picker.endDate.format('hh:mm A'));
-    //      });
-    //      $('input[name="time_opening"]').on('cancel.daterangepicker', function(ev, picker) {
-    //        $(this).val('');
-    //      });
-                // });
             </script>
         </div>
-    <div class="form-group">
-        <input type="text" name="open_until" id="open_until" class="form-control" placeholder="Time Available Until : "/>
-        <script type="text/javascript">
+        <div class="form-group">
+            <input type="text" name="open_until" id="open_until" class="form-control" placeholder="Time Available Until : "/>
+            <script type="text/javascript">
             $(function() {
             $('input[name="open_until"]').timepicker({
                 timeFormat: 'HH:mm a',
                 dynamic: true,
             })
             });
-        </script>
-    </div>
+            </script>
+        </div>
+        <b>Monday
+        <div class="form-group">
+        <input list="times" type="text" name="Monday" id="Monday" class="form-control"
+        placeholder="Choose what times on Monday work best for you" />
+        <datalist id ="times">
+            <option value="Morning"/>
+            <option value="Afternoon"/>
+            <option value="Evening"/>
+            <option value="All day"/>
+            <option value="Not Available"/>
+        </datalist>
+        </div>
+        </b>
+        <b>Tuesday
+        <div class="form-group">
+        <input list="times" type="text" name="Tuesday" id="Tuesday" class="form-control"
+        placeholder="Choose what times on Tuesday work best for you" />
+        <datalist id ="times">
+            <option value="Morning"/>
+            <option value="Afternoon"/>
+            <option value="Evening"/>
+            <option value="All day"/>
+            <option value="Not Available"/>
+        </datalist>
+        </div>
+        </b>
+        <b>Wednesday
+        <div class="form-group">
+        <input list="times" type="text" name="Wednesday" id="Wednesday" class="form-control"
+        placeholder="Choose what times on Wednesday work best for you" />
+        <datalist id ="times">
+            <option value="Morning"/>
+            <option value="Afternoon"/>
+            <option value="Evening"/>
+            <option value="All day"/>
+            <option value="Not Available"/>
+        </datalist>
+        </div>
+        </b>
+        <b>Thursday
+        <div class="form-group">
+        <input list="times" type="text" name="Thursday" id="Thursday" class="form-control"
+        placeholder="Choose what times on Thursday work best for you" />
+        <datalist id ="times">
+            <option value="Morning"/>
+            <option value="Afternoon"/>
+            <option value="Evening"/>
+            <option value="All day"/>
+            <option value="Not Available"/>
+        </datalist>
+        </div>
+        </b>
+        <b>Friday
+        <div class="form-group">
+        <input list="times" type="text" name="Friday" id="Friday" class="form-control"
+        placeholder="Choose what times on Friday work best for you" />
+        <datalist id ="times">
+            <option value="Morning"/>
+            <option value="Afternoon"/>
+            <option value="Evening"/>
+            <option value="All day"/>
+            <option value="Not Available"/>
+        </datalist>
+        </div>
+        </b>
         <div class="form-group">
         <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
         </div>
