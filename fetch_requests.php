@@ -133,61 +133,61 @@ Where (U1.location = U2.location
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U2.id < U1.id)
+    AND U1.id < U2.id)
     Limit 1
 ";
 
