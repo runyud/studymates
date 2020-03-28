@@ -80,16 +80,16 @@
     .container{
       position: relative;
       margin-top: 50px;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       margin-right:100px;
-      margin-left: 65px;
+      margin-left: 120px;
       text-align: relative;
       z-index: 1;
     }
 
     input.form-control{
       position:right;
-      width: 850px;
+      width: 750px;
       height: 18px;
       opacity: 0.7;
       border-radius: 2px;
