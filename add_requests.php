@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO('mysql:host=localhost ;dbname=studymates', 'root', '');
+$connect = new PDO('mysql:host=localhost;dbname=studymates', 'root', '');
 
 $error = '';
 $user_name = '';
@@ -63,7 +63,7 @@ else
 
 if(empty($_POST["Monday"]))
 {
-  $error .= '<p class="text-danger">Availability is required</p>';
+  $error .= '<p class="text-danger">Monday Availability is required</p>';
 }
 else
 {
@@ -72,7 +72,7 @@ else
 
 if(empty($_POST["Tuesday"]))
 {
-  $error .= '<p class="text-danger">Availability is required</p>';
+  $error .= '<p class="text-danger">Tuesday Availability is required</p>';
 }
 else
 {
@@ -81,7 +81,7 @@ else
 
 if(empty($_POST["Wednesday"]))
 {
-  $error .= '<p class="text-danger">Availability is required</p>';
+  $error .= '<p class="text-danger">Wednesday Availability is required</p>';
 }
 else
 {
@@ -90,7 +90,7 @@ else
 
 if(empty($_POST["Thursday"]))
 {
-  $error .= '<p class="text-danger">Availability is required</p>';
+  $error .= '<p class="text-danger">Thursday Availability is required</p>';
 }
 else
 {
@@ -99,7 +99,7 @@ else
 
 if(empty($_POST["Friday"]))
 {
-  $error .= '<p class="text-danger">Availability is required</p>';
+  $error .= '<p class="text-danger">Friday Availability is required</p>';
 }
 else
 {
@@ -128,7 +128,7 @@ if($error == '')
    ':Friday' => $Friday
   )
  );
- $error = '<label class="text-success"></label>';
+ $error = '<label class="text-success">Successfully Added Availability! Waiting for Match!</label>';
 }
 
 $data = array(
