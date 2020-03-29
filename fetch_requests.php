@@ -13,181 +13,827 @@ Where (U1.location = U2.location
     AND U1.Monday = U2.Monday
     AND U1.Tuesday = U2.Tuesday
     AND U1.Wednesday = U2.Wednesday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = U2.Monday
     AND U1.Tuesday = U2.Tuesday
     AND U1.Thursday = U2.Thursday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = U2.Monday
     AND U1.Tuesday = U2.Tuesday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = U2.Monday
     AND U1.Wednesday = U2.Wednesday
     AND U1.Thursday = U2.Thursday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = U2.Monday
     AND U1.Wednesday = U2.Wednesday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = U2.Monday
     AND U1.Thursday = U2.Thursday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = U2.Tuesday
     AND U1.Wednesday = U2.Wednesday
     AND U1.Thursday = U2.Thursday
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = U2.Tuesday
     AND U1.Wednesday = U2.Wednesday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = U2.Tuesday
     AND U1.Thursday = U2.Thursday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Wednesday = U2.Wednesday
     AND U1.Thursday = U2.Thursday
     AND U1.Friday = U2.Friday
-    AND U1.id < U2.id)
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Tuesday = 'All day'
     AND U1.Wednesday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Tuesday = 'All day'
     AND U1.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Tuesday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Wednesday = 'All day'
     AND U1.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Wednesday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Monday = 'All day'
     AND U1.Thursday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Monday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = 'All day'
     AND U1.Wednesday = 'All day'
     AND U1.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = 'All day'
     AND U1.Wednesday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Tuesday = 'All day'
     AND U1.Thursday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U1.Wednesday = 'All day'
     AND U1.Thursday = 'All day'
     AND U1.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Tuesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Monday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Monday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Wednesday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Tuesday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
     OR
     (U1.location = U2.location 
     AND U2.Wednesday = 'All day'
     AND U2.Thursday = 'All day'
     AND U2.Friday = 'All day'
-    AND U1.id < U2.id)
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Wednesday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Friday = U2.Friday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Friday = U2.Friday
+    AND U1.Wednesday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Friday = U2.Friday
+    AND U1.Thursday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Friday = U2.Friday
+    AND U1.Wednesday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Friday = U2.Friday
+    AND U1.Thursday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = U2.Friday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Friday = U2.Friday
+    AND U1.Thursday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.Tuesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = U2.Friday
+    AND U1.Wednesday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Tuesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Wednesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Monday = U2.Monday
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Monday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Monday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Monday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Wednesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Tuesday = U2.Tuesday
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Monday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Monday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Tuesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Tuesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Wednesday = U2.Wednesday
+    AND U1.Thursday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Monday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Monday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Tuesday = 'All day'
+    AND U1.Friday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Thursday = U2.Thursday
+    AND U1.Friday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Friday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U1.Tuesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Monday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Monday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Tuesday = 'All day'
+    AND U1.Wednesday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Tuesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND U1.Friday = U2.Friday
+    AND U1.Wednesday = 'All day'
+    AND U1.Thursday = 'All day'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Monday = 'All day' OR U2.Monday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Monday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Monday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Tuesday = 'All day' OR U2.Tuesday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Tuesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Tuesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
+    OR
+    (U1.location = U2.location 
+    AND (U1.Wednesday = 'All day' OR U2.Wednesday = 'All day')
+    AND (U1.Thursday = 'All day' OR U2.Thursday = 'All day')
+    AND (U1.Friday = 'All day' OR U2.Friday = 'All day')
+    AND U1.Wednesday != 'Not Available'
+    AND U1.Thursday != 'Not Available'
+    AND U1.Friday != 'Not Available'
+    AND U2.Wednesday != 'Not Available'
+    AND U2.Thursday != 'Not Available'
+    AND U2.Friday != 'Not Available'
+    AND U1.id != U2.id)
     Limit 1
 ";
 
