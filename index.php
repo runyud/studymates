@@ -153,12 +153,11 @@
         placeholder="Enter Email" />
         </div>
         <div class="form-group">
-        <input list="dropdown" type="text" name="location" id="location" class="form-control"
-        placeholder="Choose a Preferred Location" />
-        <datalist id ="dropdown">
-            <option value="Central"/>
-            <option value="North"/>
-        </datalist>
+        <label for='location'> location: </label>
+        <select id ='location' name = 'location' size = 2  multiple>
+            <option value="Central"> Central </option>
+            <option value="North"> North </option>
+        </select>
         </div>
         <b>Enter time window in which you are willing to meet-up today</b>
         <div class="form-group">
@@ -183,70 +182,50 @@
             });
             </script>
         </div>
-        <b>Monday
-        <div class="form-group">
-        <input list="times" type="text" name="Monday" id="Monday" class="form-control"
-        placeholder="Choose what times on Monday work best for you" />
-        <datalist id ="times">
-            <option value="Morning"/>
-            <option value="Afternoon"/>
-            <option value="Evening"/>
-            <option value="All day"/>
-            <option value="Not Available"/>
-        </datalist>
-        </div>
+        <div class = "form-group">
+        <label for='times'> Monday: </label>
+        <select id ="Monday" name = "Monday" multiple>
+            <option value="Morning"> Morning </option>
+            <option value="Afternoon"> Afternoon </option>
+            <option value="Evening"> Evening </option>
+            <option value="All day"> All day </option>
+            <option value="Not Available"> Not available </option>
+        </select>
+        <label for='times'> Tuesday: </label>
+        <select id ="Tuesday" name = "Tuesday" multiple>
+            <option value="Morning"> Morning </option>
+            <option value="Afternoon"> Afternoon </option>
+            <option value="Evening"> Evening </option>
+            <option value="All day"> All day </option>
+            <option value="Not Available"> Not available </option>
+        </select>
+        <div>
         </b>
-        <b>Tuesday
-        <div class="form-group">
-        <input list="times" type="text" name="Tuesday" id="Tuesday" class="form-control"
-        placeholder="Choose what times on Tuesday work best for you" />
-        <datalist id ="times">
-            <option value="Morning"/>
-            <option value="Afternoon"/>
-            <option value="Evening"/>
-            <option value="All day"/>
-            <option value="Not Available"/>
-        </datalist>
-        </div>
+        <label for='times'> Wednesday: </label>
+        <select id ="Wednesday" name = "Wednesday" multiple>
+            <option value="Morning"> Morning </option>
+            <option value="Afternoon"> Afternoon </option>
+            <option value="Evening"> Evening </option>
+            <option value="All day"> All day </option>
+            <option value="Not Available"> Not available </option>
+        </select>
+        <label for='times'> Thursday: </label>
+        <select id ="Thursday" name = "Thursday" multiple>
+            <option value="Morning"> Morning </option>
+            <option value="Afternoon"> Afternoon </option>
+            <option value="Evening"> Evening </option>
+            <option value="All day"> All day </option>
+            <option value="Not Available"> Not available </option>
+        </select>
         </b>
-        <b>Wednesday
-        <div class="form-group">
-        <input list="times" type="text" name="Wednesday" id="Wednesday" class="form-control"
-        placeholder="Choose what times on Wednesday work best for you" />
-        <datalist id ="times">
-            <option value="Morning"/>
-            <option value="Afternoon"/>
-            <option value="Evening"/>
-            <option value="All day"/>
-            <option value="Not Available"/>
-        </datalist>
-        </div>
-        </b>
-        <b>Thursday
-        <div class="form-group">
-        <input list="times" type="text" name="Thursday" id="Thursday" class="form-control"
-        placeholder="Choose what times on Thursday work best for you" />
-        <datalist id ="times">
-            <option value="Morning"/>
-            <option value="Afternoon"/>
-            <option value="Evening"/>
-            <option value="All day"/>
-            <option value="Not Available"/>
-        </datalist>
-        </div>
-        </b>
-        <b>Friday
-        <div class="form-group">
-        <input list="times" type="text" name="Friday" id="Friday" class="form-control"
-        placeholder="Choose what times on Friday work best for you" />
-        <datalist id ="times">
-            <option value="Morning"/>
-            <option value="Afternoon"/>
-            <option value="Evening"/>
-            <option value="All day"/>
-            <option value="Not Available"/>
-        </datalist>
-        </div>
+        <label for='times'> Friday: </label>
+        <select id ="Friday" name = "Friday" multiple>
+            <option value="Morning"> Morning </option>
+            <option value="Afternoon"> Afternoon </option>
+            <option value="Evening"> Evening </option>
+            <option value="All day"> All day </option>
+            <option value="Not Available"> Not available </option>
+        </select>
         </b>
         <div class="form-group">
         <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
